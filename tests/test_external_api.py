@@ -1,6 +1,6 @@
 from unittest.mock import patch
 
-from src.exa2 import get_transaction_amount
+from src.external_api import get_transaction_amount
 
 transaction_ = {
     "id": 441945886,
@@ -26,7 +26,7 @@ def test_get_transaction_amount_success(mock_get):
 
 
 @patch("requests.get")
-def test_get_transaction_amount_uncorrect_apikey(mock_get):
+def test_get_transaction_amount_unsuccess(mock_get):
     """Тест на неуспешный запрос когда сумма в валюте"""
     mock_get.return_value.status_code = 401
     mock_get.return_value.json.return_value = None

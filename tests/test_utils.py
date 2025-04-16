@@ -1,6 +1,6 @@
 from unittest.mock import mock_open, patch
 
-from src.utils2 import get_json_transactions
+from src.utils import get_json_transactions
 
 
 @patch("builtins.open", new_callable=mock_open, read_data='[{"amount": 100, "currency": "USD"}]')
